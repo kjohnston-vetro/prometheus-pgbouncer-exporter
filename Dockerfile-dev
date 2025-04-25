@@ -2,7 +2,7 @@ FROM python:3.9-alpine
 
 # Install dependencies
 COPY . /prometheus-pgbouncer-exporter
-RUN  apk add --update --no-cache postgresql-dev gcc musl-dev && \
+RUN  apk add --update --no-cache postgresql-dev gcc musl-dev curl && \
      pip install -r /prometheus-pgbouncer-exporter/requirements.txt
 
 WORKDIR /prometheus-pgbouncer-exporter
